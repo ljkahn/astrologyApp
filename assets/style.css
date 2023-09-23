@@ -1,0 +1,44 @@
+:root {
+  --white: white;
+  --black: black;
+  --berry: #983A54;
+  
+  }
+  
+  * {
+    font-size: 62.5%;
+    box-sizing: border-box;
+  }
+  
+  body {
+    display: flex;
+    align-items: center;
+    padding: 10.125rem 10.625rem;
+    font-family: Victor Mono;
+  }
+  
+  
+  .jumbotron{
+    background-image: url(./images/backgroundMoons.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+  }
+  
+  .content-card {
+    background: rgba(152, 58, 84, 0.75);
+    width: 68.75rem;
+    height: 43.75rem;
+    border-radius: 1.25rem;
+    margin: auto;
+    color: var(--white);
+  }
+
+  .custom-form {
+    display: flex;
+    align-content: center;
+    
+  }
