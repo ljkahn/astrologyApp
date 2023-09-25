@@ -18,7 +18,7 @@
   }
   
   
-  .jumbotron{
+  .background{
     background-image: url(./images/backgroundMoons.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -35,10 +35,11 @@
     border-radius: 1.25rem;
     margin: auto;
     color: var(--white);
+    align-content: center;
   }
 
   .custom-form {
     display: flex;
-    align-content: center;
-    
   }
+
+ 
