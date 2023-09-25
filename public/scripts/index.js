@@ -1,5 +1,6 @@
-const buttonEl = $("#submit");
+const userForm = $("#dataForm")
 
+const buttonEl = $("#submit");
 const userName = $("#inputName");
 const userMonth = $("#inputMonth");
 const userDay = $("#inputDay");
@@ -25,20 +26,26 @@ country: userCountry.val(),
 }
 
  
-const getBirthData = () => {
+const getBirthData = (event) => {
+  event.preventDefault()
+  console.log("Hello")
   $.ajax({
     url: "https://zylalabs.com/api/1508/astrological+calculation+api/1243/birthdata",
     method: "GET",
     headers: {
-      "Authorization": "2229|TaIc6CtmSFuhyqTAqSwbW6fOFtWDlmVPTKbRo8ZJ"
+      "Authorization": "Bearer 2229|TaIc6CtmSFuhyqTAqSwbW6fOFtWDlmVPTKbRo8ZJ"
     },
-    data: "{\r\n    \"name\": \"\",\r\n    \"year\": 1997,\r\n    \"month\": 04,\r\n    \"day\": 17,\r\n    \"hour\": 07,\r\n    \"minute\": 34,\r\n    \"longitude\": -122,\r\n    \"latitude\": 47,\r\n    \"city\": \"Redmond\",\r\n    \"timezone\": \"United States\/Seattle\",\r\n    \"language\": \"EN\"\r\n}"
-  }
-  )
-  console.log(data);
+    data: "{\r\n    \"name\": \"Lillian\",\r\n    \"year\": 1997,\r\n    \"month\": 04,\r\n    \"day\": 17,\r\n    \"hour\": 07,\r\n    \"minute\": 34,\r\n    \"longitude\": -122,\r\n    \"latitude\": 47,\r\n    \"city\": \"Redmond\",\r\n    \"timezone\": \"United States\/Seattle\",\r\n    \"language\": \"EN\"\r\n}"
+  })
+  .then((data) =>  {
+    console.log(data);
+  })
+  .catch((error) => {
+    console.error("Error:", error);
+  });
 }
-
-buttonEl.on("submit", getBirthData)
+  
+userForm.on("submit", getBirthData)
 
 
 
