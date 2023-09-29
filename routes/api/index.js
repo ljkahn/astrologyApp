@@ -1,9 +1,10 @@
-const express = require("express");
+//setting up the router to work on this route
+const router = require('express').Router();
+//connecting students to the studentRoutes js
+const astrology = require('./index.js');
 
-const resultsRouter = require("../results");
+//all paths in students will be prefixed with /api/students
+router.use('/astrology', astrology);
 
-const app = express();
-
-app.use("/results", resultsRouter);
-
-module.exports = app;
+//exporting the module so we don't have to type /students in all the routes 
+module.exports = router;
